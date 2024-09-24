@@ -8,6 +8,7 @@ import ReportsScreen from '../screens/ReportsScreen';
 import SearchScreen from '../screens/SearchScreen';
 import AlertsScreen from '../screens/AlertsScreen';
 
+
 const Tab = createBottomTabNavigator();
 
 const Navigation = () => {

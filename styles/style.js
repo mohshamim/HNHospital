@@ -1,4 +1,3 @@
-// styles/styles.js
 import { StyleSheet } from 'react-native';
 import theme from './theme';  // Import the theme file
 
@@ -25,7 +24,7 @@ const globalStyles = StyleSheet.create({
     shadowColor: theme.shadows.light.shadowColor,
     shadowOffset: theme.shadows.light.shadowOffset,
     shadowOpacity: theme.shadows.light.shadowOpacity,
-    elevation: theme.shadows.light.elevation, // Android shadow
+    elevation: theme.shadows.light.elevation,
   },
   header: {
     flexDirection: 'row',
@@ -33,14 +32,15 @@ const globalStyles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 20,
     paddingVertical: 10,
-    backgroundColor: '#F0F4F8',
-    borderBottomWidth: 1,
-    borderBottomColor: '#E2E8F0',
+  },
+  headerIcon: {
+    fontSize: 24,
+    color: theme.colors.iconColor,
   },
   headerTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#155E75',
+    fontSize: theme.typography.fontSizes.large,
+    fontWeight: theme.typography.fontWeights.bold,
+    color: theme.colors.primary,
   },
   profileInfo: {
     alignItems: 'center',

@@ -1,19 +1,17 @@
-// styles/theme.js
-
 const theme = {
-    // Define Colors
     colors: {
       primary: '#155E75',      
-      secondary: '#2ecc71',    // Secondary color (replace with Figma's secondary color)
-      background: '#CBD5E1',   // Background color (replace with Figma's background)
+      secondary: '#2ecc71',    // Secondary color 
+      background: '#e2e8f0',   // Background color 
       textPrimary: '#475569',  // Primary text color
       textSecondary: '#0E7490', // Secondary text color
       accent: '#e74c3c',       // Accent color for buttons, highlights, etc.
       white: '#ffffff',
       black: '#000000',
+      iconColor: '#334155'
     },
   
-    // Define Font and Typography
+    // Font and Typography
     typography: {
     fontFamily: {
       regular: 'Roboto-Regular', // Roboto Regular
