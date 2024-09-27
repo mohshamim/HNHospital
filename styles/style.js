@@ -4,7 +4,8 @@ import theme from './theme';  // Import the theme file
 const globalStyles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: theme.spacing.medium,
+    paddingHorizontal: theme.spacing.small - 5,
+    paddingVertical: theme.spacing.large,
     backgroundColor: theme.colors.background,
   },
   title: {
@@ -33,6 +34,10 @@ const globalStyles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 10,
   },
+  editIcon: {
+    fontSize: 15,
+    color: theme.colors.white,
+  },
   headerIcon: {
     fontSize: 24,
     color: theme.colors.iconColor,
@@ -47,23 +52,29 @@ const globalStyles = StyleSheet.create({
     marginVertical: 20,
   },
   profileImage: {
-    width: 100,
-    height: 100,
-    borderRadius: 50,
+    width: 110,
+    height: 110,
+    borderWidth:5,
+    borderColor: theme.colors.profileBorder,
+    borderRadius: 70,
     marginBottom: 10,
   },
   editButton: {
     position: 'absolute',
-    right: 40,
-    top: 70,
+    flexDirection:'row',
+    left: 165,
+    top: 95,
+    alignItems:'center',
+    justifyContent:'space-between',
     backgroundColor: theme.colors.primary,
-    borderRadius: theme.borderRadius.small,
+    borderRadius: theme.borderRadius.large,
     paddingHorizontal: 10,
     paddingVertical: 2,
   },
   editText: {
     color: theme.colors.white,
     fontSize: theme.typography.fontSizes.small,
+    marginLeft: theme.spacing.small-7,
     fontWeight: theme.typography.fontWeights.bold,
   },
   profileName: {

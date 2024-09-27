@@ -8,7 +8,8 @@ const theme = {
       accent: '#e74c3c',       // Accent color for buttons, highlights, etc.
       white: '#ffffff',
       black: '#000000',
-      iconColor: '#334155'
+      iconColor: '#334155',
+      profileBorder: '#0E7490',
     },
   
     // Font and Typography

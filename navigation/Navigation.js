@@ -7,12 +7,14 @@ import ProfileScreen from '../screens/ProfileScreen';
 import ReportsScreen from '../screens/ReportsScreen';
 import SearchScreen from '../screens/SearchScreen';
 import AlertsScreen from '../screens/AlertsScreen';
-
-
+import { StatusBar } from 'expo-status-bar';
+import Layout from './_layout';
 const Tab = createBottomTabNavigator();
 
 const Navigation = () => {
   return (
+    <>
+    <StatusBar style="dark" backgroundColor="#F1F5F9" />
     <NavigationContainer>
       <Tab.Navigator
         initialRouteName="Profile"
@@ -21,6 +23,7 @@ const Navigation = () => {
           tabBarStyle: { backgroundColor: '#f8f9fa' },  // Style the tab bar
           tabBarActiveTintColor: '#155E75',  // Color when a tab is active
           tabBarInactiveTintColor: '#A0AEC0',  // Color when a tab is inactive
+          headerShown: false, // Hide the default header
         }}
       >
         <Tab.Screen
@@ -57,6 +60,7 @@ const Navigation = () => {
           name="Profile"
           component={ProfileScreen}
           options={{
+            // headerShown: false,
             tabBarLabel: 'Profile',
             tabBarIcon: ({ color, size }) => (
               <MaterialIcons name="person" color={color} size={size} />
@@ -64,7 +68,9 @@ const Navigation = () => {
           }}
         />
       </Tab.Navigator>
+      <Layout />
     </NavigationContainer>
+    </>
   );
 };
 

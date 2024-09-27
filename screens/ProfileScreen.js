@@ -1,6 +1,6 @@
 import React from 'react';
 import { ScrollView, View, Text, Image, TouchableOpacity } from 'react-native';
-import { FontAwesome, MaterialIcons } from '@expo/vector-icons';
+import { FontAwesome, Ionicons, MaterialIcons } from '@expo/vector-icons';
 import globalStyles from '../styles/style';
 
 const ProfileScreen = ({ navigation }) => {
@@ -9,9 +9,11 @@ const ProfileScreen = ({ navigation }) => {
       <View style={globalStyles.innerContainer}>  
         {/* Header */}
         <View style={globalStyles.header}>
-          <FontAwesome name="arrow-left" size={24} style={globalStyles.headerIcon} onPress={() => navigation.goBack()} />
+          <Ionicons name="arrow-back-outline" size={24} style={globalStyles.headerIcon} onPress={() => navigation.goBack()} />
           <Text style={globalStyles.headerTitle}>My Profile</Text>
+          <TouchableOpacity onPress={() => navigation.openDrawer()} >
           <MaterialIcons name="more-vert" size={24} style={globalStyles.headerIcon} />
+          </TouchableOpacity>
         </View>
 
         {/* Profile Picture and Name */}
@@ -21,6 +23,7 @@ const ProfileScreen = ({ navigation }) => {
             style={globalStyles.profileImage}
           />
           <TouchableOpacity style={globalStyles.editButton}>
+          <MaterialIcons name="edit" style={globalStyles.editIcon} />
             <Text style={globalStyles.editText}>Edit</Text>
           </TouchableOpacity>
           <Text style={globalStyles.profileName}>Youssef Amir Al-Saleh</Text>
