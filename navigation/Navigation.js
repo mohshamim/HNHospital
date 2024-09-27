@@ -1,21 +1,23 @@
 // navigation/Navigation.js
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import { MaterialIcons, Feather, FontAwesome } from '@expo/vector-icons';  // Import icon libraries
 import ProfileScreen from '../screens/ProfileScreen';
 import ReportsScreen from '../screens/ReportsScreen';
 import SearchScreen from '../screens/SearchScreen';
 import AlertsScreen from '../screens/AlertsScreen';
 import { StatusBar } from 'expo-status-bar';
-import Layout from './_layout';
-const Tab = createBottomTabNavigator();
+import CustomDrawerContent from './CustomDrawer';
 
-const Navigation = () => {
+const Tab = createBottomTabNavigator();
+const Drawer = createDrawerNavigator();
+const Stack = createStackNavigator();
+
+export const BottomTabs = () => {
   return (
-    <>
-    <StatusBar style="dark" backgroundColor="#F1F5F9" />
-    <NavigationContainer>
       <Tab.Navigator
         initialRouteName="Profile"
         screenOptions={{
@@ -60,7 +62,6 @@ const Navigation = () => {
           name="Profile"
           component={ProfileScreen}
           options={{
-            // headerShown: false,
             tabBarLabel: 'Profile',
             tabBarIcon: ({ color, size }) => (
               <MaterialIcons name="person" color={color} size={size} />
@@ -68,8 +69,39 @@ const Navigation = () => {
           }}
         />
       </Tab.Navigator>
-      <Layout />
-    </NavigationContainer>
+  )
+}
+
+const DrawerNavigator = () => {
+  return (
+    <Drawer.Navigator 
+      drawerContent={(props) => <CustomDrawerContent {...props} />}
+      screenOptions={{ headerShown: false }}
+    >
+      <Drawer.Screen name="Home" component={BottomTabs} options={{
+          drawerItemStyle: { display: 'none' }, // Hide this menu item
+        }}  />
+      {/* You can add more screens to the Drawer if needed */}
+    </Drawer.Navigator>
+  );
+};
+
+// Stack Navigator to manage both Bottom Tabs and Drawer
+const RootStackNavigator = () => {
+  return (
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="Drawer" component={DrawerNavigator} /> {/* Ensure this line is correct */}
+    </Stack.Navigator>
+  );
+};
+
+const Navigation = () => {
+  return (
+    <>
+      <StatusBar style="dark" backgroundColor="#F1F5F9" />
+      <NavigationContainer>
+        <DrawerNavigator />
+      </NavigationContainer>
     </>
   );
 };

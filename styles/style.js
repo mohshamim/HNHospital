@@ -59,11 +59,18 @@ const globalStyles = StyleSheet.create({
     borderRadius: 70,
     marginBottom: 10,
   },
+  drawerProfileImage: {
+    width: 60,
+    height: 60,
+    borderWidth:2,
+    borderColor: theme.colors.profileBorder,
+    borderRadius: 70,
+    marginBottom: 10,
+  },
   editButton: {
-    position: 'absolute',
     flexDirection:'row',
-    left: 165,
-    top: 95,
+    top: -25,
+    zIndex: 100,
     alignItems:'center',
     justifyContent:'space-between',
     backgroundColor: theme.colors.primary,
@@ -81,7 +88,6 @@ const globalStyles = StyleSheet.create({
     fontSize: 22,
     fontWeight: 'bold',
     color: '#155E75',
-    marginTop: 10,
   },
   addressText: {
     fontSize: 12,
@@ -120,6 +126,26 @@ const globalStyles = StyleSheet.create({
     fontWeight: 'bold',
     color: theme.colors.primary,
     marginTop: 5,
+  },
+  drawerHeader: {
+    padding: 20,
+    flexDirection:'row',
+    alignItems:'center',
+    justifyContent:'space-between'
+
+  },
+  headerText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+  drawerItem: {
+    padding: theme.spacing.large,
+    flexDirection:'row',
+    alignItems:'center',
+  },
+  itemText: {
+    fontSize: 16,
+    paddingLeft: theme.spacing.small
   },
 });
 
