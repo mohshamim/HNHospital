@@ -10,6 +10,8 @@ const theme = {
       black: '#000000',
       iconColor: '#334155',
       profileBorder: '#0E7490',
+      drawerIcon: '#0E7490',
+      logout: '#FF6B6B',
     },
   
     // Font and Typography
@@ -20,6 +22,7 @@ const theme = {
       light: 'Roboto-Light',
     },
     fontSizes: {
+      xsmall: 12,
       small: 14, // 14px font size
       medium: 18,
       large: 24,
