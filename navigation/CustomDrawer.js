@@ -33,7 +33,7 @@ const CustomDrawerContent = (props) => {
         <FontAwesome name='user' size={15} color={theme.colors.drawerIcon} />
         <Text style={globalStyles.itemText}>My Profile</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={globalStyles.drawerItem} onPress={() => props.navigation.navigate('Profile')}>
+      <TouchableOpacity style={globalStyles.drawerItem} onPress={() => props.navigation.navigate('Timeline')}>
         <MaterialCommunityIcons name='timeline' size={15} color={theme.colors.drawerIcon} />
         <Text style={globalStyles.itemText}>Timeline</Text>
       </TouchableOpacity>

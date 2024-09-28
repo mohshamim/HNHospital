@@ -12,14 +12,15 @@ const theme = {
       profileBorder: '#0E7490',
       drawerIcon: '#0E7490',
       logout: '#FF6B6B',
+      stepper: '#94A3B8',
+      seagreen: '#0E7490',
+      lightgreen: '#155E75'
     },
   
     // Font and Typography
     typography: {
     fontFamily: {
-      regular: 'Roboto-Regular', // Roboto Regular
-      bold: 'Roboto-Bold',
-      light: 'Roboto-Light',
+      regular: 'Roboto', // Roboto Regular
     },
     fontSizes: {
       xsmall: 12,
@@ -33,6 +34,7 @@ const theme = {
       light: '300',
     },
     lineHeights: {
+      xsmall: 18,
       small: 22,   // Line height of 22px
       medium: 28,
       large: 32,
