@@ -1,7 +1,7 @@
 import React from 'react';
 import { ScrollView, View, Text, Image, TouchableOpacity } from 'react-native';
 import { FontAwesome, Ionicons, MaterialIcons } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native';
+import { DrawerActions, useNavigation } from '@react-navigation/native';
 import globalStyles from '../styles/style';
 
 const ProfileScreen = ({  }) => {
