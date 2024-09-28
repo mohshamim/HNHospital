@@ -89,6 +89,7 @@ const Navigation = () => {
           overlayColor: 'rgba(0, 0, 0, 0.7)',
           drawerStyle: {
             height: '100%',
+            backgroundColor:'#CBD5E1',
           },
           headerShown: false,
         }}
