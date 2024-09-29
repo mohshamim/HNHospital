@@ -15,10 +15,18 @@ const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 
+// Profile Drawer Navigator
+const ProfileDrawerNavigator = () => (
+  <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Screen name="Profile" component={ProfileScreen} />
+    <Stack.Screen name="Timeline" component={Timeline} />
+  </Stack.Navigator>
+);
+
 // Bottom Tabs Navigator
 const BottomTabs = () => (
   <Tab.Navigator
-    initialRouteName="Search"
+    initialRouteName="Profile" // Set Profile as the initial screen
     screenOptions={{
       tabBarShowLabel: true,
       tabBarStyle: { backgroundColor: '#f8f9fa' },
@@ -70,14 +78,6 @@ const BottomTabs = () => (
   </Tab.Navigator>
 );
 
-// Profile Drawer Navigator
-const ProfileDrawerNavigator = () => (
-  <Stack.Navigator screenOptions={{ headerShown: false }}>
-    <Stack.Screen name="Profile" component={ProfileScreen} />
-    <Stack.Screen name="Timeline" component={Timeline} />
-  </Stack.Navigator>
-);
-
 // Main Navigation
 const Navigation = () => {
   return (
@@ -89,14 +89,18 @@ const Navigation = () => {
           overlayColor: 'rgba(0, 0, 0, 0.7)',
           drawerStyle: {
             height: '100%',
-            backgroundColor:'#CBD5E1',
+            backgroundColor: '#CBD5E1',
           },
           headerShown: false,
         }}
       >
-        <Drawer.Screen name="BottomTabs" component={BottomTabs} options={{
-      drawerItemStyle: { display: 'none' },
-    }} />
+        <Drawer.Screen
+          name="BottomTabs"
+          component={BottomTabs}
+          options={{
+            drawerItemStyle: { display: 'none' },
+          }}
+        />
       </Drawer.Navigator>
     </NavigationContainer>
   );
