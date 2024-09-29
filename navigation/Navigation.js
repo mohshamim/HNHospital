@@ -26,7 +26,7 @@ const ProfileDrawerNavigator = () => (
 // Bottom Tabs Navigator
 const BottomTabs = () => (
   <Tab.Navigator
-    initialRouteName="Profile" // Set Profile as the initial screen
+    initialRouteName="Profile"
     screenOptions={{
       tabBarShowLabel: true,
       tabBarStyle: { backgroundColor: '#f8f9fa' },
