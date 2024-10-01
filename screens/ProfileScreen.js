@@ -1,35 +1,54 @@
 import React from 'react';
-import { ScrollView, View, Text, Image, TouchableOpacity } from 'react-native';
+import { ScrollView, View, Text, Image, Pressable } from 'react-native';
 import { FontAwesome, Ionicons, MaterialIcons } from '@expo/vector-icons';
-import { DrawerActions, useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import globalStyles from '../styles/style';
 
-const ProfileScreen = ({  }) => {
+const ProfileScreen = () => {
   const navigation = useNavigation();
+
   return (
     <ScrollView style={globalStyles.container}>
-      <View style={globalStyles.innerContainer}>  
+      <View style={globalStyles.innerContainer}>
         {/* Header */}
         <View style={globalStyles.header}>
-          <Ionicons name="arrow-back-outline" size={24} style={globalStyles.headerIcon} onPress={() => navigation.goBack()} />
+          <Ionicons
+            name="arrow-back-outline"
+            size={24}
+            style={globalStyles.headerIcon}
+            onPress={() => navigation.goBack()}
+            accessibilityLabel="Go Back"
+            accessibilityRole="button"
+          />
           <Text style={globalStyles.headerTitle}>My Profile</Text>
-          <TouchableOpacity onPress={() => navigation.openDrawer()} >
-          <MaterialIcons name="more-vert" size={24} style={globalStyles.headerIcon} />
-          </TouchableOpacity>
+          <Pressable
+            onPress={() => navigation.openDrawer()}
+            accessibilityLabel="Open Menu"
+            accessibilityRole="button"
+          >
+            <MaterialIcons name="more-vert" size={24} style={globalStyles.headerIcon} />
+          </Pressable>
         </View>
 
         {/* Profile Picture and Name */}
         <View style={globalStyles.profileInfo}>
-          <Image 
-            source={require('../assets/arab-man2.webp')} 
+          <Image
+            source={require('../assets/arab-man2.webp')}
             style={globalStyles.profileImage}
+            accessibilityLabel="Profile Picture"
           />
-          <TouchableOpacity style={globalStyles.editButton}>
-          <MaterialIcons name="edit" style={globalStyles.editIcon} />
+          <Pressable
+            style={({ pressed }) => [globalStyles.editButton, pressed && { opacity: 0.8 }]}
+            accessibilityLabel="Edit Profile Picture"
+            accessibilityRole="button"
+          >
+            <MaterialIcons name="edit" style={globalStyles.editIcon} />
             <Text style={globalStyles.editText}>Edit</Text>
-          </TouchableOpacity>
+          </Pressable>
           <Text style={globalStyles.profileName}>Youssef Amir Al-Saleh</Text>
-          <Text style={globalStyles.addressText}>Address Line Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod - 411048</Text>
+          <Text style={globalStyles.addressText}>
+            Address Line Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod - 411048
+          </Text>
         </View>
 
         {/* Medical Information Section */}
@@ -45,9 +64,12 @@ const ProfileScreen = ({  }) => {
         <View style={globalStyles.section}>
           <View style={globalStyles.sectionHeader}>
             <Text style={globalStyles.sectionTitle}>Personal Information</Text>
-            <TouchableOpacity>
+            <Pressable
+              accessibilityLabel="Edit Personal Information"
+              accessibilityRole="button"
+            >
               <MaterialIcons name="edit" size={24} style={globalStyles.headerIcon} />
-            </TouchableOpacity>
+            </Pressable>
           </View>
           <View style={globalStyles.infoBox}>
             <Text style={globalStyles.infoTitle}>First name</Text>

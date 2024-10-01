@@ -10,6 +10,7 @@ import SearchScreen from '../screens/SearchScreen';
 import AlertsScreen from '../screens/AlertsScreen';
 import CustomDrawerContent from './CustomDrawer';
 import Timeline from '../screens/Timeline';
+import MyVisit from '../screens/MyVisit';
 
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
@@ -20,6 +21,7 @@ const ProfileDrawerNavigator = () => (
   <Stack.Navigator screenOptions={{ headerShown: false }}>
     <Stack.Screen name="Profile" component={ProfileScreen} />
     <Stack.Screen name="Timeline" component={Timeline} />
+    <Stack.Screen name="MyVisit" component={MyVisit} />
   </Stack.Navigator>
 );
 

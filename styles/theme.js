@@ -1,24 +1,24 @@
 const theme = {
-    colors: {
-      primary: '#155E75',      
-      secondary: '#2ecc71',    // Secondary color 
-      background: '#e2e8f0',   // Background color 
-      textPrimary: '#475569',  // Primary text color
-      textSecondary: '#0E7490', // Secondary text color
-      accent: '#e74c3c',       // Accent color for buttons, highlights, etc.
-      white: '#ffffff',
-      black: '#000000',
-      iconColor: '#334155',
-      profileBorder: '#0E7490',
-      drawerIcon: '#0E7490',
-      logout: '#FF6B6B',
-      stepper: '#94A3B8',
-      seagreen: '#0E7490',
-      lightgreen: '#155E75'
-    },
-  
-    // Font and Typography
-    typography: {
+  colors: {
+    primary: '#155E75',
+    secondary: '#2ecc71',    // Secondary color 
+    background: '#e2e8f0',   // Background color 
+    textPrimary: '#475569',  // Primary text color
+    textSecondary: '#0E7490', // Secondary text color
+    accent: '#e74c3c',       // Accent color for buttons, highlights, etc.
+    white: '#ffffff',
+    black: '#000000',
+    iconColor: '#334155',
+    profileBorder: '#0E7490',
+    drawerIcon: '#0E7490',
+    logout: '#FF6B6B',
+    stepper: '#94A3B8',
+    seagreen: '#0E7490',
+    lightgreen: '#155E75'
+  },
+
+  // Font and Typography
+  typography: {
     fontFamily: {
       regular: 'Roboto', // Roboto Regular
     },

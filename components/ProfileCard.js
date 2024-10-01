@@ -1,6 +1,5 @@
-// components/ProfileCard.js
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Platform } from 'react-native';
 import theme from '../styles/theme';  // Import theme for consistent styles
 
 const ProfileCard = ({ firstName, lastName, medicalRecord, contact }) => {
@@ -18,11 +17,20 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.white,
     padding: theme.spacing.medium,
     borderRadius: theme.borderRadius.medium,
-    shadowColor: theme.shadows.light.shadowColor,
-    shadowOffset: theme.shadows.light.shadowOffset,
-    shadowOpacity: theme.shadows.light.shadowOpacity,
-    elevation: theme.shadows.light.elevation,
     marginVertical: theme.spacing.small,
+    // Apply boxShadow for web; use shadow properties for mobile (iOS/Android)
+    ...Platform.select({
+      web: {
+        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+      },
+      default: {
+        shadowColor: theme.shadows.light.shadowColor,
+        shadowOffset: theme.shadows.light.shadowOffset,
+        shadowOpacity: theme.shadows.light.shadowOpacity,
+        shadowRadius: 4,
+        elevation: theme.shadows.light.elevation,
+      },
+    }),
   },
   name: {
     fontSize: theme.typography.fontSizes.large,
