@@ -1,3 +1,4 @@
+// navigation/CustomDrawerContent.js
 import React from 'react';
 import { View, Text, Pressable, StyleSheet, Image } from 'react-native';
 import { DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer';
@@ -15,21 +16,47 @@ const CustomDrawerContent = (props) => {
             style={globalStyles.drawerProfileImage}
           />
           <View>
-            <Text numberOfLines={2} style={{ width: 120, fontSize: theme.typography.fontSizes.small, fontFamily: theme.typography.fontFamily.bold }}>
+            <Text
+              numberOfLines={2}
+              style={{
+                width: 120,
+                fontSize: theme.typography.fontSizes.small,
+                fontFamily: theme.typography.fontFamily.bold,
+              }}
+            >
               Youssef Amir Al-Saleh
             </Text>
-            <Text style={{ fontSize: theme.typography.fontSizes.xsmall, fontFamily: theme.typography.fontFamily.regular, lineHeight: theme.typography.lineHeights.small }}>
+            <Text
+              style={{
+                fontSize: theme.typography.fontSizes.xsmall,
+                fontFamily: theme.typography.fontFamily.regular,
+                lineHeight: theme.typography.lineHeights.small,
+              }}
+            >
               56565656
             </Text>
           </View>
           <View>
             <MaterialCommunityIcons name="logout" size={20} color={theme.colors.logout} />
-            <Text style={{ fontSize: theme.typography.fontSizes.xsmall, fontFamily: theme.typography.fontFamily.regular, lineHeight: theme.typography.lineHeights.small }}>
+            <Text
+              style={{
+                fontSize: theme.typography.fontSizes.xsmall,
+                fontFamily: theme.typography.fontFamily.regular,
+                lineHeight: theme.typography.lineHeights.small,
+              }}
+            >
               Logout
             </Text>
           </View>
         </View>
-        <View style={{ alignSelf: 'center', width: '90%', borderBottomWidth: 0.5, borderColor: theme.colors.primaryBorder }}></View>
+        <View
+          style={{
+            alignSelf: 'center',
+            width: '90%',
+            borderBottomWidth: 0.5,
+            borderColor: theme.colors.primaryBorder,
+          }}
+        ></View>
         <DrawerItemList {...props} />
 
         {/* Custom drawer items */}
@@ -65,6 +92,7 @@ const drawerItems = [
   { label: 'Book Appointment', icon: FontAwesome, iconName: 'calendar-plus-o', navigateTo: 'Profile' },
   { label: 'Follow up', icon: Entypo, iconName: 'chat', navigateTo: 'Profile' },
   { label: 'Change Language', icon: FontAwesome5, iconName: 'globe', navigateTo: 'Profile' },
+  { label: 'Other Screens', icon: Entypo, iconName: 'code', navigateTo: 'Demo' },
 ];
 
 export default CustomDrawerContent;

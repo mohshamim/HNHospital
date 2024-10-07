@@ -174,8 +174,7 @@ const styles = StyleSheet.create({
         paddingVertical: 10,
         paddingHorizontal: 20,
         borderRadius: theme.borderRadius.small,
-        flex: 8, // 8/12 columns
-        flexDirection: 'row',
+        flex: 2, // Adjust width using flex (8/12)
         justifyContent: 'center',
         alignItems: 'center',
     },
@@ -183,14 +182,13 @@ const styles = StyleSheet.create({
         color: theme.colors.white,
         fontSize: theme.typography.fontSizes.small,
         fontWeight: theme.typography.fontWeights.bold,
-
     },
     cameraIcon: {
         width: 24,
         height: 24,
         resizeMode: 'contain',
         marginLeft: 10,
-        flex: 1, // 4/12 columns
+        flex: 1, // Adjust width using flex (4/12)
     },
     icon: {
         width: 16,

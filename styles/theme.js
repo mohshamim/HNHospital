@@ -50,7 +50,7 @@ const theme = {
   borderRadius: {
     small: 4,
     medium: 8,
-    large: 16,
+    large: 50,
   },
 
   shadows: {

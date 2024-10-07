@@ -5,12 +5,19 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { MaterialIcons, Feather, FontAwesome } from '@expo/vector-icons';
 import ProfileScreen from '../screens/ProfileScreen';
-import ReportsScreen from '../screens/ReportsScreen';
-import SearchScreen from '../screens/SearchScreen';
+import MedicalRecordsScreen from '../screens/MedicalRecordsScreen';
+import BookAppointmentScreen from '../screens/BookAppointmentScreen';
 import AlertsScreen from '../screens/AlertsScreen';
 import CustomDrawerContent from './CustomDrawer';
 import Timeline from '../screens/Timeline';
 import MyVisit from '../screens/MyVisit';
+import Demo from '../screens/Demo';
+import RegistrationA from '../screens/RegistrationA';
+import RegistrationB from '../screens/RegistrationB';
+import RegistrationC from '../screens/RegistrationC';
+import RegistrationD from '../screens/RegistrationD';
+import LoginScreenA from '../screens/LoginScreenA';
+import LoginScreenB from '../screens/LoginScreenB';
 
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
@@ -22,6 +29,13 @@ const ProfileDrawerNavigator = () => (
     <Stack.Screen name="Profile" component={ProfileScreen} />
     <Stack.Screen name="Timeline" component={Timeline} />
     <Stack.Screen name="MyVisit" component={MyVisit} />
+    <Stack.Screen name="Demo" component={Demo} />
+    <Stack.Screen name="RegistrationA" component={RegistrationA} />
+    <Stack.Screen name="RegistrationB" component={RegistrationB} />
+    <Stack.Screen name="RegistrationC" component={RegistrationC} />
+    <Stack.Screen name="RegistrationD" component={RegistrationD} />
+    <Stack.Screen name="LoginScreenA" component={LoginScreenA} />
+    <Stack.Screen name="LoginScreenB" component={LoginScreenB} />
   </Stack.Navigator>
 );
 
@@ -39,7 +53,7 @@ const BottomTabs = () => (
   >
     <Tab.Screen
       name="Search"
-      component={SearchScreen}
+      component={BookAppointmentScreen}
       options={{
         tabBarLabel: 'Search',
         tabBarIcon: ({ color, size }) => (
@@ -49,7 +63,7 @@ const BottomTabs = () => (
     />
     <Tab.Screen
       name="Reports"
-      component={ReportsScreen}
+      component={MedicalRecordsScreen}
       options={{
         tabBarLabel: 'Reports',
         tabBarIcon: ({ color, size }) => (
