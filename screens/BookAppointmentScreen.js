@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { View, Text, FlatList, Pressable, StyleSheet, Image, ScrollView } from 'react-native';
 import { Ionicons, MaterialIcons } from '@expo/vector-icons';
 import theme from '../styles/theme';
+import { useNavigation } from '@react-navigation/native'; // Import navigation
 
 const BookAppointmentScreen = () => {
     const [activeDepartment, setActiveDepartment] = useState('Radiology');
     const departments = ['Radiology', 'Cardiology', 'Physical Therapy', 'Gastroenterology'];
+    const navigation = useNavigation(); // Initialize navigation
 
     const doctorsData = [
         {
@@ -15,6 +17,7 @@ const BookAppointmentScreen = () => {
             distance: '2.8km away',
             rating: 4.5,
             reviews: '3.1k people',
+            description: 'Description about Dr. Ahmed Khan...',
             image: require('../assets/doctors/doctor1.webp'),
         },
         {
@@ -24,26 +27,10 @@ const BookAppointmentScreen = () => {
             distance: '4.5km away',
             rating: 4.0,
             reviews: '4.9k people',
+            description: 'Description about Dr. Luciana Bowers...',
             image: require('../assets/doctors/doctor2.webp'),
         },
-        {
-            id: '3',
-            name: 'Dr. Dakota Simon',
-            specialty: 'Neurologist',
-            distance: '6.7km away',
-            rating: 5.0,
-            reviews: '1.3k people',
-            image: require('../assets/doctors/doctor1.webp'),
-        },
-        {
-            id: '4',
-            name: 'Dr. Reuben Johns',
-            specialty: 'Oncologist',
-            distance: '8.3km away',
-            rating: 4.5,
-            reviews: '4.2k people',
-            image: require('../assets/doctors/doctor2.webp'),
-        },
+        // Add more doctor data...
     ];
 
     // Function to render the star rating
@@ -64,7 +51,10 @@ const BookAppointmentScreen = () => {
     };
 
     const renderDoctorItem = ({ item }) => (
-        <View style={styles.doctorCard}>
+        <Pressable
+            style={styles.doctorCard}
+            onPress={() => navigation.navigate('DoctorDetailsScreen', { doctor: item })} // Navigate to DoctorDetailsScreen
+        >
             <Image source={item.image} style={styles.doctorImage} />
             <View style={styles.doctorInfo}>
                 <Text style={styles.doctorName}>{item.name}</Text>
@@ -76,7 +66,7 @@ const BookAppointmentScreen = () => {
                 </View>
             </View>
             <Ionicons name="chevron-forward-outline" size={20} color={theme.colors.textPrimary} />
-        </View>
+        </Pressable>
     );
 
     return (
@@ -114,6 +104,9 @@ const BookAppointmentScreen = () => {
         </View>
     );
 };
+
+
+
 
 const styles = StyleSheet.create({
     container: {

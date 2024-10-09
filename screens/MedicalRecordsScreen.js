@@ -110,16 +110,16 @@ const styles = StyleSheet.create({
     tabButton: {
         paddingVertical: 8,
         paddingHorizontal: 15,
-        borderRadius: 20, // Rounded corners
+        borderRadius: 20,
         backgroundColor: theme.colors.white,
-        marginHorizontal: 5, // Spacing between tabs
-        minWidth: 100, // Adjusted width for uniformity
+        marginHorizontal: 5,
+        minWidth: 100,
         alignItems: 'center',
     },
     activeTab: {
-        backgroundColor: theme.colors.primary, // Active tab background color
+        backgroundColor: theme.colors.primary,
         borderRadius: 20,
-        shadowColor: '#000', // Adding shadow for active tab
+        shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.1,
         shadowRadius: 4,

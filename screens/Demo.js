@@ -13,6 +13,8 @@ const DemoScreen = () => {
         { title: 'REGISTRATION D', route: 'RegistrationD' },
         { title: 'LOGIN A', route: 'LoginScreenA' },
         { title: 'LOGIN B', route: 'LoginScreenB' },
+        { title: 'VIDEO CONSULATION ', route: 'VideoConsultationScreen' },
+        { title: 'ENQUIRY FORM ', route: 'EnquiryFormScreen' },
     ];
 
     return (

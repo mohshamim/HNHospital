@@ -12,16 +12,30 @@ import CustomDrawerContent from './CustomDrawer';
 import Timeline from '../screens/Timeline';
 import MyVisit from '../screens/MyVisit';
 import Demo from '../screens/Demo';
+import FeedbackScreen from '../screens/FeedbackScreen';
 import RegistrationA from '../screens/RegistrationA';
 import RegistrationB from '../screens/RegistrationB';
 import RegistrationC from '../screens/RegistrationC';
 import RegistrationD from '../screens/RegistrationD';
 import LoginScreenA from '../screens/LoginScreenA';
 import LoginScreenB from '../screens/LoginScreenB';
+import VideoConsultationScreen from '../screens/VideoConsultationScreen';
+import EnquiryFormScreen from '../screens/EnquiryFormScreen';
+import DoctorDetailsScreen from '../screens/DoctorDetailsScreen';
 
+// Initialize Bottom Tab and Stack Navigators
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
+
+const AppointmentStackNavigator = () => (
+  <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Screen name="BookAppointmentScreen" component={BookAppointmentScreen} />
+    <Stack.Screen name="DoctorDetailsScreen" component={DoctorDetailsScreen} /> {/* Include this */}
+  </Stack.Navigator>
+);
+
+
 
 // Profile Drawer Navigator
 const ProfileDrawerNavigator = () => (
@@ -30,15 +44,25 @@ const ProfileDrawerNavigator = () => (
     <Stack.Screen name="Timeline" component={Timeline} />
     <Stack.Screen name="MyVisit" component={MyVisit} />
     <Stack.Screen name="Demo" component={Demo} />
+    <Stack.Screen name="BookAppointmentScreen" component={BookAppointmentScreen} />
+    <Stack.Screen name="FeedbackScreen" component={FeedbackScreen} />
     <Stack.Screen name="RegistrationA" component={RegistrationA} />
     <Stack.Screen name="RegistrationB" component={RegistrationB} />
     <Stack.Screen name="RegistrationC" component={RegistrationC} />
     <Stack.Screen name="RegistrationD" component={RegistrationD} />
     <Stack.Screen name="LoginScreenA" component={LoginScreenA} />
     <Stack.Screen name="LoginScreenB" component={LoginScreenB} />
+    <Stack.Screen name="VideoConsultationScreen" component={VideoConsultationScreen} />
+    <Stack.Screen name="EnquiryFormScreen" component={EnquiryFormScreen} />
   </Stack.Navigator>
 );
-
+// Drawer Navigation
+const DrawerNavigator = () => (
+  <Drawer.Navigator>
+    <Drawer.Screen name="BookAppointmentStack" component={AppointmentStackNavigator} />
+    {/* Add other drawer screens here */}
+  </Drawer.Navigator>
+);
 // Bottom Tabs Navigator
 const BottomTabs = () => (
   <Tab.Navigator
@@ -53,7 +77,7 @@ const BottomTabs = () => (
   >
     <Tab.Screen
       name="Search"
-      component={BookAppointmentScreen}
+      component={AppointmentStackNavigator}  // Use Appointment stack
       options={{
         tabBarLabel: 'Search',
         tabBarIcon: ({ color, size }) => (
@@ -61,14 +85,13 @@ const BottomTabs = () => (
         ),
       }}
     />
+
     <Tab.Screen
       name="Reports"
       component={MedicalRecordsScreen}
       options={{
         tabBarLabel: 'Reports',
-        tabBarIcon: ({ color, size }) => (
-          <Feather name="file-text" color={color} size={size} />
-        ),
+        tabBarIcon: ({ color, size }) => <Feather name="file-text" color={color} size={size} />,
       }}
     />
     <Tab.Screen
@@ -76,9 +99,7 @@ const BottomTabs = () => (
       component={AlertsScreen}
       options={{
         tabBarLabel: 'Alerts',
-        tabBarIcon: ({ color, size }) => (
-          <FontAwesome name="bell" color={color} size={size} />
-        ),
+        tabBarIcon: ({ color, size }) => <FontAwesome name="bell" color={color} size={size} />,
       }}
     />
     <Tab.Screen
@@ -86,9 +107,7 @@ const BottomTabs = () => (
       component={ProfileDrawerNavigator}
       options={{
         tabBarLabel: 'Profile',
-        tabBarIcon: ({ color, size }) => (
-          <MaterialIcons name="person" color={color} size={size} />
-        ),
+        tabBarIcon: ({ color, size }) => <MaterialIcons name="person" color={color} size={size} />,
       }}
     />
   </Tab.Navigator>
