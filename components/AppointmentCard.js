@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     padding: theme.spacing.medium,
     borderRadius: theme.borderRadius.medium,
     marginVertical: theme.spacing.small,
-    // Apply boxShadow for web; use shadow properties for mobile (iOS/Android)
+
     ...Platform.select({
       web: {
         boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',

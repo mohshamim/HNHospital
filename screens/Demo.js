@@ -43,27 +43,27 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         padding: 20,
-        backgroundColor: theme.colors.background, // Use theme background color
+        backgroundColor: theme.colors.background,
     },
     title: {
-        fontSize: theme.typography.fontSizes.large, // Use theme for large font size
-        fontWeight: theme.typography.fontWeights.bold, // Use theme for bold font weight
-        color: theme.colors.textPrimary, // Use theme color
+        fontSize: theme.typography.fontSizes.large,
+        fontWeight: theme.typography.fontWeights.bold,
+        color: theme.colors.textPrimary,
         marginBottom: 20,
     },
     button: {
-        backgroundColor: theme.colors.primary, // Use primary color from theme
+        backgroundColor: theme.colors.primary,
         paddingVertical: 15,
         paddingHorizontal: 25,
-        borderRadius: theme.borderRadius.medium, // Use theme's border radius
+        borderRadius: theme.borderRadius.medium,
         marginVertical: 10,
         alignItems: 'center',
-        width: '80%', // Make the button take 80% of the screen width
+        width: '80%',
     },
     buttonText: {
-        color: theme.colors.white, // Use white color from theme
-        fontSize: theme.typography.fontSizes.medium, // Use medium font size from theme
-        fontWeight: theme.typography.fontWeights.bold, // Use bold font weight from theme
+        color: theme.colors.white,
+        fontSize: theme.typography.fontSizes.medium,
+        fontWeight: theme.typography.fontWeights.bold,
     },
 });
 
