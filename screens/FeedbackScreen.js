@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
         marginBottom: 20,
     },
     starIcon: {
-        marginRight: 5, // Adjust spacing between stars
+        marginRight: 5,
     },
     feedbackInput: {
         backgroundColor: theme.colors.white,
@@ -132,8 +132,8 @@ const styles = StyleSheet.create({
     },
     tagContainer: {
         flexDirection: 'row',
-        flexWrap: 'wrap', // Make sure tags wrap to the next line
-        justifyContent: 'space-between', // Adjust spacing between tags
+        flexWrap: 'wrap',
+        justifyContent: 'space-between',
         marginBottom: 20,
     },
     tag: {
@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: theme.colors.primaryBorder,
         marginBottom: 10,
-        minWidth: '30%', // Adjust width for tags to be more compact
+        minWidth: '30%',
         alignItems: 'center',
     },
     tagSelected: {
@@ -164,8 +164,8 @@ const styles = StyleSheet.create({
         borderRadius: theme.borderRadius.large,
         alignItems: 'center',
         justifyContent: 'center',
-        position: 'absolute', // Position it at the bottom
-        bottom: 30, // Adjust bottom padding
+        position: 'absolute',
+        bottom: 30,
         left: 20,
         right: 20,
     },

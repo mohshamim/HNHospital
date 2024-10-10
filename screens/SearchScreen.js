@@ -17,12 +17,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: theme.colors.background, // Use theme for background color
+    backgroundColor: theme.colors.background,
   },
   title: {
-    fontSize: theme.typography.fontSizes.large, // Use theme for font size
-    fontWeight: theme.typography.fontWeights.bold, // Use theme for font weight
-    color: theme.colors.textPrimary, // Use theme for text color
+    fontSize: theme.typography.fontSizes.large,
+    fontWeight: theme.typography.fontWeights.bold,
+    color: theme.colors.textPrimary,
   },
 });
 

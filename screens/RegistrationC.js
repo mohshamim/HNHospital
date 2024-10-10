@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     },
     scrollViewContent: {
         flexGrow: 1,
-        justifyContent: 'space-between', // Adjust spacing for better alignment
+        justifyContent: 'space-between',
     },
     inputContainer: {
         marginBottom: 15,
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
         paddingVertical: 15,
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 20, // Add margin to separate button from inputs
+        marginTop: 20,
     },
     buttonText: {
         color: theme.colors.white,

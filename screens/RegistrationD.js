@@ -1,4 +1,4 @@
-// RegistrationScreenD.js
+
 import React from 'react';
 import { View, Text, Pressable, StyleSheet, Image } from 'react-native';
 import theme from '../styles/theme';
