@@ -30,12 +30,14 @@ const Stack = createStackNavigator();
 
 const AppointmentStackNavigator = () => (
   <Stack.Navigator screenOptions={{ headerShown: false }}>
-    <Stack.Screen name="BookAppointmentScreen" component={BookAppointmentScreen} />
-    <Stack.Screen name="DoctorDetailsScreen" component={DoctorDetailsScreen} /> {/* Include this */}
+    <Stack.Screen
+      name="BookAppointmentScreen"
+      component={BookAppointmentScreen}
+    />
+    <Stack.Screen name="DoctorDetailsScreen" component={DoctorDetailsScreen} />
+    {/* Include this */}
   </Stack.Navigator>
 );
-
-
 
 // Profile Drawer Navigator
 const ProfileDrawerNavigator = () => (
@@ -44,7 +46,10 @@ const ProfileDrawerNavigator = () => (
     <Stack.Screen name="Timeline" component={Timeline} />
     <Stack.Screen name="MyVisit" component={MyVisit} />
     <Stack.Screen name="Demo" component={Demo} />
-    <Stack.Screen name="BookAppointmentScreen" component={BookAppointmentScreen} />
+    <Stack.Screen
+      name="BookAppointmentScreen"
+      component={BookAppointmentScreen}
+    />
     <Stack.Screen name="FeedbackScreen" component={FeedbackScreen} />
     <Stack.Screen name="RegistrationA" component={RegistrationA} />
     <Stack.Screen name="RegistrationB" component={RegistrationB} />
@@ -52,14 +57,20 @@ const ProfileDrawerNavigator = () => (
     <Stack.Screen name="RegistrationD" component={RegistrationD} />
     <Stack.Screen name="LoginScreenA" component={LoginScreenA} />
     <Stack.Screen name="LoginScreenB" component={LoginScreenB} />
-    <Stack.Screen name="VideoConsultationScreen" component={VideoConsultationScreen} />
+    <Stack.Screen
+      name="VideoConsultationScreen"
+      component={VideoConsultationScreen}
+    />
     <Stack.Screen name="EnquiryFormScreen" component={EnquiryFormScreen} />
   </Stack.Navigator>
 );
 // Drawer Navigation
 const DrawerNavigator = () => (
   <Drawer.Navigator>
-    <Drawer.Screen name="BookAppointmentStack" component={AppointmentStackNavigator} />
+    <Drawer.Screen
+      name="BookAppointmentStack"
+      component={AppointmentStackNavigator}
+    />
     {/* Add other drawer screens here */}
   </Drawer.Navigator>
 );
@@ -77,7 +88,7 @@ const BottomTabs = () => (
   >
     <Tab.Screen
       name="Search"
-      component={AppointmentStackNavigator}  // Use Appointment stack
+      component={AppointmentStackNavigator} // Use Appointment stack
       options={{
         tabBarLabel: 'Search',
         tabBarIcon: ({ color, size }) => (
@@ -91,7 +102,9 @@ const BottomTabs = () => (
       component={MedicalRecordsScreen}
       options={{
         tabBarLabel: 'Reports',
-        tabBarIcon: ({ color, size }) => <Feather name="file-text" color={color} size={size} />,
+        tabBarIcon: ({ color, size }) => (
+          <Feather name="file-text" color={color} size={size} />
+        ),
       }}
     />
     <Tab.Screen
@@ -99,7 +112,9 @@ const BottomTabs = () => (
       component={AlertsScreen}
       options={{
         tabBarLabel: 'Alerts',
-        tabBarIcon: ({ color, size }) => <FontAwesome name="bell" color={color} size={size} />,
+        tabBarIcon: ({ color, size }) => (
+          <FontAwesome name="bell" color={color} size={size} />
+        ),
       }}
     />
     <Tab.Screen
@@ -107,7 +122,9 @@ const BottomTabs = () => (
       component={ProfileDrawerNavigator}
       options={{
         tabBarLabel: 'Profile',
-        tabBarIcon: ({ color, size }) => <MaterialIcons name="person" color={color} size={size} />,
+        tabBarIcon: ({ color, size }) => (
+          <MaterialIcons name="person" color={color} size={size} />
+        ),
       }}
     />
   </Tab.Navigator>
