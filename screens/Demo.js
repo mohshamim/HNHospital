@@ -15,6 +15,9 @@ const DemoScreen = () => {
         { title: 'LOGIN B', route: 'LoginScreenB' },
         { title: 'VIDEO CONSULATION ', route: 'VideoConsultationScreen' },
         { title: 'ENQUIRY FORM ', route: 'EnquiryFormScreen' },
+        { title: 'INTRO SCREEN A ', route: 'IntroScreenA' },
+        { title: 'INTRO SCREEN B ', route: 'IntroScreenB' },
+        { title: 'INTRO SCREEN C ', route: 'IntroScreenC' },
     ];
 
     return (

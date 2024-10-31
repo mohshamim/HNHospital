@@ -22,6 +22,9 @@ import LoginScreenB from '../screens/LoginScreenB';
 import VideoConsultationScreen from '../screens/VideoConsultationScreen';
 import EnquiryFormScreen from '../screens/EnquiryFormScreen';
 import DoctorDetailsScreen from '../screens/DoctorDetailsScreen';
+import IntroScreenA from '../screens/IntroScreenA';
+import IntroScreenB from '../screens/IntroScreenB';
+import IntroScreenC from '../screens/IntroScreenC';
 
 // Initialize Bottom Tab and Stack Navigators
 const Tab = createBottomTabNavigator();
@@ -54,6 +57,11 @@ const ProfileDrawerNavigator = () => (
     <Stack.Screen name="LoginScreenB" component={LoginScreenB} />
     <Stack.Screen name="VideoConsultationScreen" component={VideoConsultationScreen} />
     <Stack.Screen name="EnquiryFormScreen" component={EnquiryFormScreen} />
+    <Stack.Screen name="IntroScreenA" component={IntroScreenA} />
+    <Stack.Screen name="IntroScreenB" component={IntroScreenB} />
+    <Stack.Screen name="IntroScreenC" component={IntroScreenC} />
+
+
   </Stack.Navigator>
 );
 // Drawer Navigation

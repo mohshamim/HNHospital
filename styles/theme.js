@@ -1,6 +1,6 @@
 const theme = {
   colors: {
-    primary: '#155E75',
+    primary: '#155E75', //primary Buttons, some borders, icons
     secondary: '#2ecc71',    // Secondary color 
     background: '#e2e8f0',   // Background color 
     textPrimary: '#475569',  // Primary text color
