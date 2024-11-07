@@ -13,6 +13,7 @@ import { useNavigation } from '@react-navigation/native';
 import { Entypo, Ionicons, Octicons, FontAwesome6 } from '@expo/vector-icons';
 
 import theme from '../styles/theme';
+import globalStyles from '../styles/style';
 
 const DEPARTMENTS = [
   'Radiology',
@@ -95,12 +96,16 @@ const BookAppointmentScreen = () => {
   );
 
   return (
-    <View style={styles.container}>
+    <View style={globalStyles.container}>
       {/* Header */}
-      <View style={styles.header}>
-        <FontAwesome6 name="arrow-left" size={24} style={styles.headerIcon} />
-        <Text style={styles.headerTitle}>Book Appointment</Text>
-        <Octicons name="search" size={24} style={styles.headerIcon} />
+      <View style={globalStyles.header}>
+        <Ionicons
+          name="arrow-back-outline"
+          size={24}
+          style={globalStyles.headerIcon}
+        />
+        <Text style={globalStyles.headerTitle}>Book Appointment</Text>
+        <Octicons name="search" size={24} style={globalStyles.headerIcon} />
       </View>
 
       {/* Department Tabs */}
@@ -145,29 +150,8 @@ const BookAppointmentScreen = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: theme.colors.background,
-  },
-  header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    paddingVertical: 20,
-    paddingHorizontal: 15,
-    backgroundColor: theme.colors.background,
-    marginTop: StatusBar.currentHeight,
-  },
   tabsContainerStyle: {
     paddingRight: 15,
-  },
-  headerIcon: {
-    color: theme.colors.textPrimary,
-  },
-  headerTitle: {
-    fontSize: theme.typography.fontSizes.semilarge,
-    fontWeight: theme.typography.fontWeights.medium,
-    color: theme.colors.textPrimary,
   },
   tabsContainer: {
     flexDirection: 'row',
