@@ -30,7 +30,8 @@ const DOCTORS_DATA = [
     distance: '2.8km away',
     rating: 4.5,
     reviews: '3.1k people',
-    description: 'Description about Dr. Ahmed Khan...',
+    description:
+      'about Dr. Ahmed Khan... Nulla ipsum cillum ea mollit adipisicing dolor velit quis tempor. Dolore ullamco nostrud consectetur esse veniam. Aute adipisicing commodo et duis enim eiusmod dolore labore proident labore officia voluptate voluptate laboris. Aliquip irure aliquip aute do elit laboris duis laborum. Sit mollit consequat elit duis dolor mollit.',
     image: require('../assets/doctors/doctor1.webp'),
   },
   {
@@ -40,7 +41,7 @@ const DOCTORS_DATA = [
     distance: '4.5km away',
     rating: 4.0,
     reviews: '4.9k people',
-    description: 'Description about Dr. Luciana Bowers...',
+    description: 'about Dr. Luciana Bowers...',
     image: require('../assets/doctors/doctor2.webp'),
   },
   // Add more doctor data...

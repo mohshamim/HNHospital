@@ -63,32 +63,37 @@ const MedicalRecordsScreen = () => {
   const [activeTab, setActiveTab] = useState('Diagnosis');
   const tabs = ['Diagnosis', 'Treatment', 'Prescription', 'Lab Results'];
 
-  const renderRecordItem = ({ item }) => (
-    <View style={styles.recordItem}>
-      <View style={styles.recordInfo}>
-        <Text style={styles.recordTitle}>{item.title}</Text>
-        <Text style={styles.recordDoctor}>
-          {item.doctor} • {item.specialty}
-        </Text>
-        <Text style={styles.recordDate}>{item.date}</Text>
+  const renderRecordItem = ({ item, index }) => (
+    <>
+      <View style={styles.recordItem}>
+        <View style={styles.recordInfo}>
+          <Text style={styles.recordTitle}>{item.title}</Text>
+          <Text style={styles.recordDoctor}>
+            {item.doctor} • {item.specialty}
+          </Text>
+          <Text style={styles.recordDate}>{item.date}</Text>
+        </View>
+        <Ionicons
+          size={20}
+          name="chevron-forward-outline"
+          color={theme.colors.textPrimary}
+        />
       </View>
-      <Ionicons
-        name="chevron-forward-outline"
-        size={20}
-        color={theme.colors.textPrimary}
-      />
-    </View>
+      {RECORDS_DATA?.length - 1 !== index && <View style={styles.separator} />}
+    </>
   );
 
-  const renderSection = ({ item }) => (
-    <View style={styles.sectionContainer}>
+  const renderSection = ({ item, index }) => (
+    <>
       <Text style={styles.sectionTitle}>{item.month}</Text>
-      <FlatList
-        data={item.records}
-        renderItem={renderRecordItem}
-        keyExtractor={(record) => record.id}
-      />
-    </View>
+      <View style={styles.sectionContainer}>
+        <FlatList
+          data={item.records}
+          renderItem={renderRecordItem}
+          keyExtractor={(record) => record.id}
+        />
+      </View>
+    </>
   );
 
   return (
@@ -101,7 +106,11 @@ const MedicalRecordsScreen = () => {
           style={globalStyles.headerIcon}
         />
         <Text style={globalStyles.headerTitle}>Medical Records</Text>
-        <MaterialIcons name="phone" size={24} style={globalStyles.headerIcon} />
+        <MaterialIcons
+          name="search"
+          size={24}
+          style={globalStyles.headerIcon}
+        />
       </View>
 
       {/* Tabs */}
@@ -144,27 +153,27 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     paddingHorizontal: 15,
     borderRadius: 20,
-    backgroundColor: theme.colors.white,
+    // backgroundColor: theme.colors.white,
     marginHorizontal: 5,
     minWidth: 100,
     alignItems: 'center',
   },
   activeTab: {
-    backgroundColor: theme.colors.primary,
-    borderRadius: 20,
+    backgroundColor: theme.colors.white,
+    borderRadius: theme.borderRadius.medium,
+    elevation: 3,
+    shadowRadius: 4,
+    shadowOpacity: 0.1,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
   },
   tabText: {
     fontSize: theme.typography.fontSizes.small,
-    color: theme.colors.textSecondary,
+    color: theme.colors.textPrimary,
     fontWeight: '600',
   },
   activeTabText: {
-    color: theme.colors.white, // Active tab text color
+    color: theme.colors.textPrimary, // Active tab text color
     fontWeight: theme.typography.fontWeights.bold,
   },
   recordsContainer: {
@@ -173,6 +182,8 @@ const styles = StyleSheet.create({
   },
   sectionContainer: {
     marginVertical: 10,
+    backgroundColor: theme.colors.white,
+    borderRadius: theme.borderRadius.semilarge,
   },
   sectionTitle: {
     fontSize: theme.typography.fontSizes.medium,
@@ -181,18 +192,11 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   recordItem: {
-    backgroundColor: theme.colors.white,
-    borderRadius: theme.borderRadius.medium,
     padding: 15,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     marginBottom: 8,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 2,
   },
   recordInfo: {
     flex: 1,
@@ -211,6 +215,10 @@ const styles = StyleSheet.create({
   recordDate: {
     fontSize: theme.typography.fontSizes.small,
     color: theme.colors.textSecondary,
+  },
+  separator: {
+    height: 1,
+    backgroundColor: theme.colors.black + '30',
   },
 });
 

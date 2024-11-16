@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { MaterialIcons, Feather, FontAwesome } from '@expo/vector-icons';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import ProfileScreen from '../screens/ProfileScreen';
 import MedicalRecordsScreen from '../screens/MedicalRecordsScreen';
 import BookAppointmentScreen from '../screens/BookAppointmentScreen';
@@ -22,6 +23,10 @@ import LoginScreenB from '../screens/LoginScreenB';
 import VideoConsultationScreen from '../screens/VideoConsultationScreen';
 import EnquiryFormScreen from '../screens/EnquiryFormScreen';
 import DoctorDetailsScreen from '../screens/DoctorDetailsScreen';
+import IntroScreenA from '../screens/IntroScreenA';
+import IntroScreenB from '../screens/IntroScreenB';
+import IntroScreenC from '../screens/IntroScreenC';
+import { clearAll } from '../utils/localStorage';
 
 // Initialize Bottom Tab and Stack Navigators
 const Tab = createBottomTabNavigator();
@@ -36,6 +41,15 @@ const AppointmentStackNavigator = () => (
     />
     <Stack.Screen name="DoctorDetailsScreen" component={DoctorDetailsScreen} />
     {/* Include this */}
+  </Stack.Navigator>
+);
+
+const IntroStackNavigator = () => (
+  <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Screen name="IntroScreenA" component={IntroScreenA} />
+    <Stack.Screen name="IntroScreenB" component={IntroScreenB} />
+    <Stack.Screen name="IntroScreenC" component={IntroScreenC} />
+    <Stack.Screen name="BT" component={BottomTabs} />
   </Stack.Navigator>
 );
 
@@ -62,6 +76,9 @@ const ProfileDrawerNavigator = () => (
       component={VideoConsultationScreen}
     />
     <Stack.Screen name="EnquiryFormScreen" component={EnquiryFormScreen} />
+    <Stack.Screen name="IntroScreenA" component={IntroScreenA} />
+    <Stack.Screen name="IntroScreenB" component={IntroScreenB} />
+    <Stack.Screen name="IntroScreenC" component={IntroScreenC} />
   </Stack.Navigator>
 );
 // Drawer Navigation
@@ -132,6 +149,24 @@ const BottomTabs = () => (
 
 // Main Navigation
 const Navigation = () => {
+  const [showIntro, setShowIntro] = useState(false);
+  useEffect(() => {
+    (async () => {
+      const introFlag = await AsyncStorage.getItem('introFlag');
+      if (introFlag) {
+        setShowIntro(false);
+      } else {
+        setShowIntro(true);
+      }
+    })();
+  }, [showIntro]);
+
+  // useEffect(() => {
+  //   (async () => {
+  //     await clearAll();
+  //   })();
+  // }, []);
+
   return (
     <NavigationContainer>
       <Drawer.Navigator
@@ -146,13 +181,23 @@ const Navigation = () => {
           headerShown: false,
         }}
       >
-        <Drawer.Screen
-          name="BottomTabs"
-          component={BottomTabs}
-          options={{
-            drawerItemStyle: { display: 'none' },
-          }}
-        />
+        {showIntro ? (
+          <Drawer.Screen
+            name="IntroStackNavigator"
+            component={IntroStackNavigator}
+            options={{
+              drawerItemStyle: { display: 'none' },
+            }}
+          />
+        ) : (
+          <Drawer.Screen
+            name="BottomTabs"
+            component={BottomTabs}
+            options={{
+              drawerItemStyle: { display: 'none' },
+            }}
+          />
+        )}
       </Drawer.Navigator>
     </NavigationContainer>
   );

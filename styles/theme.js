@@ -1,6 +1,6 @@
 const theme = {
   colors: {
-    primary: '#155E75',
+    primary: '#155E75', //primary Buttons, some borders, icons
     secondary: '#2ecc71', // Secondary color
     background: '#e2e8f0', // Background color
     textPrimary: '#475569', // Primary text color
@@ -15,6 +15,7 @@ const theme = {
     stepper: '#94A3B8',
     seagreen: '#0E7490',
     lightgreen: '#155E75',
+    golden: '#FFD700',
   },
 
   // Font and Typography
@@ -53,6 +54,7 @@ const theme = {
   borderRadius: {
     small: 4,
     medium: 8,
+    semilarge: 15,
     large: 50,
   },
 
